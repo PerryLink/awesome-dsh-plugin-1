@@ -5,6 +5,7 @@
 </p>
 
 # Awesome DeepSeek Harness (DSH) Plugin
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/awesome-dsh-plugin-1)
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
