@@ -156,6 +156,12 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [czm15053/dsh-peer-link](https://github.com/czm15053/dsh-peer-link) — 让 dsh 和 Claude Code 会话直接互发消息，附带可点击的会话列表卡片（搜索/刷新/弹窗发送）。
 - [Nwflower/dsh-chat-import](https://github.com/Nwflower/dsh-chat-import) — 把 Claude Code / Codex / ChatGPT / Cursor / Gemini / Reasonix / opencode 的聊天记录全保真导入为可续聊的 DSH 会话。
 - [Nwflower/dsh-file-claim](https://github.com/Nwflower/dsh-file-claim) — 同一工作区并行多会话的文件认领与写入保护（claim/release、心跳 stale 接管、pending 三路合并）。
+- [PerryLink/dsh-checkpoint-rewind](https://github.com/PerryLink/dsh-checkpoint-rewind) — 统一 DSH 检查点：会话/工作区/配置三态快照 + /checkpoint、/rewind 一键回退 + 设置页时间线 diff + 种子回放恢复。
+- [PerryLink/dsh-claude-move](https://github.com/PerryLink/dsh-claude-move) — Claude Code/Codex/OpenCode/Hermes → DSH 迁移：导入 CLAUDE.md/AGENTS.md、斜杠命令与会话历史，审批门 + 幂等。
+- [PerryLink/dsh-composer-history](https://github.com/PerryLink/dsh-composer-history) — Web 输入框的终端式输入历史：方向键精确恢复草稿与光标、浏览器本地持久化、Ctrl+R 反查、工作区召回、压缩感知。
+- [PerryLink/dsh-output-styles](https://github.com/PerryLink/dsh-output-styles) — 运行时切换模型输出样式：内置六款样式库、/style 命令、会话级持久化、系统提示词注入与渲染器注册表。
+- [PerryLink/dsh-session-pin](https://github.com/PerryLink/dsh-session-pin) — 置顶重要会话：保持可见、排序靠前、避免被清理。
+- [PerryLink/dsh-session-sync](https://github.com/PerryLink/dsh-session-sync) — 会话日志推送/拉取到远程存储，支持可配置的自动同步。
 - [Chinesezjc/dsh-interconnect](https://github.com/Chinesezjc/dsh-interconnect) — 跨实例互联：经 interconnect 服务在多个 DSH 实例间转发消息与事件。
 - [Wine-Red/dsh-prompt-stash](https://github.com/Wine-Red/dsh-prompt-stash) — 本地、按会话隔离的 LIFO 输入暂存：临时收起未完成的输入，之后安全恢复并继续编辑。
 - [dsh-session-search](https://github.com/dsh-external/dsh-session-search) — 跨 dsh/Codex/Claude Code/pi/OpenCode 会话只读搜索，无索引。
@@ -177,7 +183,9 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [Jesse-njx/dsh-memory](https://github.com/Jesse-njx/dsh-memory) — 基于 DSH 无损会话日志的引用式记忆：蒸馏出的事实带 `(sessionId, eventRange)` 引用，可随时展开回原始日志片段。
 - [flymysql/dsh-memory](https://github.com/flymysql/dsh-memory) — 跨会话记忆库：remember / recall / forget 工具、每轮提示注入与设置页条目浏览。
 - [Xplore-LAB/dsh-plugin-asmemory](https://github.com/Xplore-LAB/dsh-plugin-asmemory) — 动作-状态时序记忆：记录类型化的状态与动作，做趋势、异常与因果关联分析。
+- [PerryLink/dsh-library](https://github.com/PerryLink/dsh-library) — 本地文档知识库：语义+关键词混合检索、引用感知注入、SQLite 索引、本地嵌入零模型下载。
 - [PerryLink/dsh-memento](https://github.com/PerryLink/dsh-memento) — 有界、分层、带审批门、可审计的跨会话记忆：`ctx.memory` 服务 + 零依赖 SQLite 存储 + `memory` 工具与冻结快照注入；写入必过审批门，模型可见内容可自会话日志重建。
+- [PerryLink/dsh-personal-directive](https://github.com/PerryLink/dsh-personal-directive) — 顶部栏一键开关的个人指令插件（框架版：中性占位指令，可替换为自己的内容）。
 - [ICCuse/dsh-file-memory](https://github.com/ICCuse/dsh-file-memory) — 文件型工作记忆：memorize/recall 把关键前提逐字保存在会话笔记文件，无损挺过上下文压缩。
 - [ICCuse/dsh-knowledge](https://github.com/ICCuse/dsh-knowledge) — 全局知识库桥：kb_add/kb_search/kb_show/kb_timeline 读写与 Codex 共享的 D:\knowledge（格式逐字节兼容）。
 - [Breeze136/kb-rag](https://github.com/Breeze136/kb-rag) — 本地文献知识库 RAG：8 个工具（PDF/文件夹/Zotero 入库、BM25+向量+重排混合检索、DOI 可点击溯源问答、范围/严格模式、去重/清空/统计），全本地 bge 嵌入 + 单文件 SQLite，实测 242 篇 86s 入库、2 万块亚秒热查询。
@@ -217,6 +225,20 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [omdsh-dev/dsh-tool-schema](https://github.com/omdsh-dev/dsh-tool-schema) — JSON Schema 验证：validate/paths/explain/normalize。
 - [omdsh-dev/dsh-tool-stat](https://github.com/omdsh-dev/dsh-tool-stat) — 描述统计/百分位数/频数分布/相关性。
 - [omdsh-dev/dsh-tool-time](https://github.com/omdsh-dev/dsh-tool-time) — 严格 ISO 8601 解析、IANA 时区转换、UTC 日历运算。
+- [PerryLink/dsh-budget](https://github.com/PerryLink/dsh-budget) — 成本治理：按模型/会话/天聚合 token 与费用、预算上限与阈值告警、碳足迹估算、/budget 命令。
+- [PerryLink/dsh-click](https://github.com/PerryLink/dsh-click) — 跨平台原生桌面控制（Windows 优先）：截图、读屏、点击/键入/滚动/按键、应用列表与启动——审批门 + 不抢焦点。
+- [PerryLink/dsh-data-quality](https://github.com/PerryLink/dsh-data-quality) — 确定性数据画像、清洗与核验：DAMA 记分卡、内容哈希去重、指标期望与漂移检查。
+- [PerryLink/dsh-draw](https://github.com/PerryLink/dsh-draw) — 统一 image_generate 工具：OpenAI Images / Zhipu CogView 路由、健康感知回退、会话配额记账。
+- [PerryLink/dsh-fast](https://github.com/PerryLink/dsh-fast) — 只读性能诊断：会话加载/恢复耗时、溢写命中、压缩次数、上下文注入量、LLM 缓存命中率（/fast）。
+- [PerryLink/dsh-fund-research](https://github.com/PerryLink/dsh-fund-research) — 基金分析：收益、持仓与绩效归因。
+- [PerryLink/dsh-github](https://github.com/PerryLink/dsh-github) — GitHub 集成：PR/issue/仓库/文件工具、评审与 CI 检查——写操作全审批门、token 不落日志。
+- [PerryLink/dsh-industry-research](https://github.com/PerryLink/dsh-industry-research) — 结构化公司/行业深研：来源捕获 + 可审计研究轨迹。
+- [PerryLink/dsh-mask](https://github.com/PerryLink/dsh-mask) — 敏感值遮蔽：密钥遮蔽规则 + 内存白名单 + 受控揭示流程。
+- [PerryLink/dsh-reach](https://github.com/PerryLink/dsh-reach) — 多通道决策与遥控桥：审批/提问卡片镜像到 IM（微信 iLink、Telegram、飞书），#token 稳定 id，聊天内直接应答。
+- [PerryLink/dsh-research-report](https://github.com/PerryLink/dsh-research-report) — 证据链研究报告：内容哈希封印来源目录，报告与来源不可分。
+- [PerryLink/dsh-talk](https://github.com/PerryLink/dsh-talk) — 语音能力：文本转语音与语音转文本，带静音与说即聊控制。
+- [PerryLink/dsh-ticktick](https://github.com/PerryLink/dsh-ticktick) — TickTick（滴答清单）任务桥：会话头任务面板 + 11 个精选 ticktick_* 工具 + 官方 MCP 端点上的设置卡片。
+- [PerryLink/dsh-translate](https://github.com/PerryLink/dsh-translate) — 会话内翻译文本与文件并做质量校验；顺带修复模型产出的坏 JSON。
 - [omdsh-dev/dsh-kb-sieve](https://github.com/omdsh-dev/dsh-kb-sieve) — 从 md/txt/docx/pdf 构建可审计知识库包（SQLite FTS5），确定性检索与原文阅读。
 - [HuanLinOTO/dsh-plugin-mineru](https://github.com/HuanLinOTO/dsh-plugin-mineru) — 向模型暴露 MineRU 文档解析工具。
 - [beancookie/dsh-plugin-anydoc](https://github.com/beancookie/dsh-plugin-anydoc) — 将 @firecrawl/anydoc 作为 anydoc 工具注册给 Agent，把 Word/PPT/Excel/PDF/EPUB 等多种文档格式转换为 GitHub-Flavored Markdown。
@@ -291,6 +313,9 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [gongyijie85/dsh-ponytail](https://github.com/gongyijie85/dsh-ponytail) — 最懒资深工程师模式（Ponytail）的 DSH 移植：6 个技能（ponytail、ponytail-audit、ponytail-debt、ponytail-gain、ponytail-help、ponytail-review），改编自 DietrichGebert/ponytail（MIT）。
 - [creght-dev/skills](https://github.com/creght-dev/skills) — Creght 平台建站技能包：CLI 拉取/推送同步、页面与组件规范、CMS、表单、Auth、SEO、发布与版本回滚。
 - [leechen298/Code2Skill](https://github.com/leechen298/Code2Skill) — 从现有代码生成 Function、MCP、Agent Skill 和离线测试包，并作为可安装的 DSH Bundle 分发。
+- [PerryLink/dsh-plugin-guide](https://github.com/PerryLink/dsh-plugin-guide) — 可安装的 DSH 插件开发指南技能：打包、契约、检查与构建校验器。
+- [PerryLink/dsh-plugin-upgrade-015](https://github.com/PerryLink/dsh-plugin-upgrade-015) — 0.1.5-alpha.1 → 0.1.5-rc.1 走廊的版本锁定升级技能：版本卡片 + 11 缝零依赖扫描器（npx CLI）。
+- [PerryLink/dsh-skill-pack-security](https://github.com/PerryLink/dsh-skill-pack-security) — 预打包安全评审技能 + 风险卡：host 与 client 双端交付。
 - [dhicoc/dsh-reverse-skill](https://github.com/dhicoc/dsh-reverse-skill) — 完整 reverse-skill 技能包（85 个 SKILL.md）的 DeepSeek Harness 插件：面向逆向工程、授权渗透测试与安全研究的技能路由包。
 - [gongyijie85/mattpocock-skills-dsh](https://github.com/gongyijie85/mattpocock-skills-dsh) — Matt Pocock 完整发布技能集（25 个 SKILL.md：grilling、writing-for-agents、wait-what、TDD、code-review、wayfinder、ask-matt 路由等）的 DeepSeek Harness 插件：改编自 mattpocock/skills（MIT）。
 - [gongyijie85/mattpocock-skills-dsh-zh](https://github.com/gongyijie85/mattpocock-skills-dsh-zh) — Matt Pocock 技能中文版的 DeepSeek Harness 插件：25 个 SKILL.md 正文全译中文（技术术语保留英文并附注释），改编自 mattpocock/skills（MIT）。
@@ -310,12 +335,17 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [fuhefei/dsh-sentinel](https://github.com/fuhefei/dsh-sentinel) — 条件驱动唤醒：file/command/http/process/webhook 持久监视，触发即唤醒 agent。
 - [omdsh-dev/dsh-deep-research](https://github.com/omdsh-dev/dsh-deep-research) — 自适应深度研究编排器（基于官方 workflow 引擎）。
 - [omdsh-dev/dsh-inspect](https://github.com/omdsh-dev/dsh-inspect) — 发现问题→修复交付→质量复查的对抗式闭环工具集。
+- [PerryLink/dsh-auto-review](https://github.com/PerryLink/dsh-auto-review) — 审批链上的第二模型自动审查：只读 reviewer 子代理给出 allow/deny 结构化判定，默认 fail-closed，全程会话日志可审计。
+- [PerryLink/dsh-background-agents](https://github.com/PerryLink/dsh-background-agents) — 后台持久子代理：结构化任务板、进度监控、随时消息与中断控制。
+- [PerryLink/dsh-defend](https://github.com/PerryLink/dsh-defend) — 提示注入、越狱与密钥泄露防御：Aho-Corasick 检测 + allow/ask/block 拦截 + 递归删除执行前门。
 - [fakechris/dsh-track](https://github.com/fakechris/dsh-track) — 嵌入式任务管理引擎：决策点协议、念头捕获墙、Linear 形 issue 存储。
 - [btspoony/dsh-advisor](https://github.com/btspoony/dsh-advisor) — 搭配一个副模型，每轮被动审查并注入见解。
 - [lonelymoon87/dsh-specflow](https://github.com/lonelymoon87/dsh-specflow) — 增加规格工件、技能、命令、由 goal 驱动的实施流程和任务进度上下文。
 - [biociao/dsh-science](https://github.com/biociao/dsh-science) — 面向 DSH 的 Claude Science 式科研工作台：ReAct 研究循环引擎（research_* 工具）、带溯源的版本化工件（artifact_* 工具）与面向基因组/病原体/生物信息的 10 个科研技能。
 - [EvilIrving/dsh-proof](https://github.com/EvilIrving/dsh-proof) — 独立只读验收层：顶层 turn 收尾前 spawn 只读 verifier，未通过时把缺口注回主 agent。
 - [PerryLink/dsh-doublecheck](https://github.com/PerryLink/dsh-doublecheck) — 工程纪律守门：动笔前审讯需求，红绿测试证据门，交付后对抗评审（grill-requirements 技能 + 工具策略门）。
+- [PerryLink/dsh-permission-rules](https://github.com/PerryLink/dsh-permission-rules) — 声明式有序 allow/deny/ask 权限规则：匹配工具名、参数（glob/正则）、工作区路径与网络目标（域名/IP/端口/协议），外加 Codex 风格进程级网络策略。
+- [PerryLink/dsh-team-rooms](https://github.com/PerryLink/dsh-team-rooms) — 连接独立会话与提供者 AI 成员的 DSH 团队房间。
 - [btspoony/mstar-harness](https://github.com/btspoony/mstar-harness) — 技能驱动的 harness/loop 工程化工作流插件。
 - [Letter2025/dsh-approval-llm](https://github.com/Letter2025/dsh-approval-llm) — 基于模型的权限审批：由独立审查模型自动应答 approval 权限请求。
 - [940842546/dsh-permissions](https://github.com/940842546/dsh-permissions) — Claude Code 风格权限规则引擎：hard/deny/ask/allow 四级规则（hard 高于全访问、不可豁免）、workspace 作用域、通配符路径保护、可视化草稿式编辑器，规则持久化于 settings.yaml。
@@ -350,6 +380,8 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [franksong2702/dsh-codex-connect](https://github.com/franksong2702/dsh-codex-connect) — 通过 ChatGPT OAuth 将 OpenAI Codex 模型接入 DeepSeek Harness，并提供可选的搜索与图片工具。
 - [kam74515-boop/dsh-everything-oauth](https://github.com/kam74515-boop/dsh-everything-oauth) — 把本机 Codex / Grok / Claude / OpenCode / CC Switch 登录态导入 DSH，在设置里自选来源并启用模型。
 - [omdsh-dev/Qwen-MM-Plugins](https://github.com/omdsh-dev/Qwen-MM-Plugins) — Qwen 多模态插件支持。
+- [PerryLink/dsh-autotier](https://github.com/PerryLink/dsh-autotier) — 强/便宜模型分档路由：意图门控落档、计划模式交接（强档规划便宜档执行）、工具/执行前高危守卫、TTL 回退。
+- [PerryLink/dsh-local-ai](https://github.com/PerryLink/dsh-local-ai) — 把 Ollama / LM Studio / 本地端点变成 DSH 的直接模型路由。
 - [suntianc/dsh-codex-auth](https://github.com/suntianc/dsh-codex-auth) — 复用 Codex CLI 的 ChatGPT 登录态注册 `openai-codex` LLM 路由，并在 DSH Web 设置中提供 GPT Auth 控件。
 - [dsh-vision](https://github.com/dsh-external/dsh-vision) — 视觉桥接：view_image 工具接任意 OpenAI 兼容 VLM。
 
@@ -389,7 +421,13 @@ DeepSeek Harness 是 DeepSeek 开源的 agent harness——既是可直接运行
 - [Jesse-njx/dsh-tmuxctl](https://github.com/Jesse-njx/dsh-tmuxctl) — 掌控你的 tmux 面板：list/send-keys/capture、在面板中运行长任务并 watch，破坏性命令需审批。
 - [xingyingyuzhui/dsh-updater-ui](https://github.com/xingyingyuzhui/dsh-updater-ui) — 设置页中的 DSH 自助更新器：一键检查/拉取（git pull --ff-only）、自动后台检查、版本对比与更新说明预览，带红点提醒。
 - [EvilIrving/dsh-repro](https://github.com/EvilIrving/dsh-repro) — /repro 导出最小可复现问题包：去 secret 的会话日志、失败命令与 git diff。
+- [PerryLink/dsh-lsp-actions](https://github.com/PerryLink/dsh-lsp-actions) — 语言服务器能力暴露给 agent：诊断、定义、引用、补全、code actions 与整仓重命名。
 - [PerryLink/dsh-mcp-panel](https://github.com/PerryLink/dsh-mcp-panel) — 官方 MCP 客户端（dsh-mcp-client）的只读运行时管理面板：/mcp 命令与设置页 MCP 页签展示连接状态、已注册工具、错误与重连计数，脱敏展示并提供启停 patch 建议。
+- [PerryLink/dsh-observe](https://github.com/PerryLink/dsh-observe) — 可观测性：请求追踪、遥测、日志缓冲与重试可见性。
+- [PerryLink/dsh-plugin-kit](https://github.com/PerryLink/dsh-plugin-kit) — 插件工程工具箱：脚手架、生态名册、peer-range 同步与校验。
+- [PerryLink/dsh-plugin-upgrade-rc1](https://github.com/PerryLink/dsh-plugin-upgrade-rc1) — 0.1.5-alpha.1 → 0.1.5-rc.1 走廊的版本卡片 + 11 缝扫描器（015 已覆盖同走廊，本条为历史包）。
+- [PerryLink/dsh-score](https://github.com/PerryLink/dsh-score) — 插件质量评分：按检查项评估插件并产出证据化合规报告。
+- [PerryLink/dsh-test-drive](https://github.com/PerryLink/dsh-test-drive) — 在一次性沙箱环境（临时 DSH_HOME）试跑插件并输出 JSON/Markdown 评分。
 - [ICCuse/dsh-pain-point-check](https://github.com/ICCuse/dsh-pain-point-check) — 强制痛点检查：同一问题连续 2 个实验未收敛后注入三问、拦截非调查类工具调用直到答出、阻止同方向重试。
 - [Jayden-X-L/forkprobe](https://github.com/Jayden-X-L/forkprobe) — 同一任务并行试跑多个技能，对比结果选出最优。
 - [vlln/plugin-registry](https://github.com/vlln/plugin-registry) — 插件生态基建：浏览器面板管理官方 repository 插件（0 patch）+ make-dsh-plugin 插件开发引导技能。
